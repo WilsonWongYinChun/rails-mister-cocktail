@@ -1,4 +1,31 @@
-h2 {
-text-align: center;
-vertical-align: middle;
+.dose-card {
+  background-color: rgba(55, 62, 64, 0.9);
+  color: #f7f7f7;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px
+}
+
+.dose-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.new-button {
+  color: #f7f7f7;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: rgb(55, 62, 64);
+  transition: background 0.3s ease;
+}
+.new-button:hover {
+  opacity: 1;
+  background: #f7f7f7;
+  text-decoration: none;
+  color: rgb(55, 62, 64);
 }

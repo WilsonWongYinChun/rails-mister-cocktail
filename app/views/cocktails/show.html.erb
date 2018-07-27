@@ -1,3 +1,26 @@
-<%= @cocktail.name %>
-<%= link_to 'add dose', new_cocktail_dose_path(@cocktail)  %>
-<%= @dose %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'background.jpg' %>);">
+  <div class="container show-container">
+    <div class="row">
+      <div class="card">
+        <%= link_to cocktails_path do %>
+        <%= fa_icon 'fa-home' %>
+        <% end %>
+        <h3><%= @cocktail.name %></h3>
+        <ul>
+          <% @cocktail.doses.each do |d| %>
+            <li>
+              <%= d.description %> <%= Ingredient.find(d.ingredient_id).name %>
+              <%= link_to dose_path(d), method: :delete do %>
+                <%= fa_icon 'fa-trash-alt'%>
+              <% end %>
+            </li>
+
+          <% end %>
+        </ul>
+        <%= link_to new_cocktail_dose_path(@cocktail) do %>
+          <%= fa_icon 'fas fa-plus-circle' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

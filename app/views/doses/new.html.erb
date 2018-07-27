@@ -1,12 +1,19 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <h2>new dose</h2>
-      <%= simple_form_for([@cocktail, @dose]) do |f| %>
-      <%= f.input :ingredient_id, collection: @ingredients  %>
-      <%= f.input :description %>
-      <%= f.submit %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'background.jpg' %>);">
+  <div class="container dose-container">
+    <div class="dose-card">
+      <%= link_to cocktails_path do %>
+        <%= fa_icon 'fa-home' %>
       <% end %>
+      <div class="row">
+        <div class="col-xs-12 col-lg-6 col-lg-offset-3">
+          <h2>new dose</h2>
+          <%= simple_form_for([@cocktail, @dose]) do |f| %>
+          <%= f.input :ingredient_id, collection: @ingredients  %>
+          <%= f.input :description %>
+          <%= f.submit "submit", class: "new-button" %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
