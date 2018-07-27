@@ -1,1 +1,12 @@
-new.html.erb
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h2>new dose</h2>
+      <%= simple_form_for([@cocktail, @dose]) do |f| %>
+      <%= f.input :ingredient_id, collection: @ingredients  %>
+      <%= f.input :description %>
+      <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+</div>
