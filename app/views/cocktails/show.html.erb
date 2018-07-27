@@ -6,6 +6,7 @@
         <%= fa_icon 'fa-home' %>
         <% end %>
         <h3><%= @cocktail.name %></h3>
+        <%= cl_image_tag @cocktail.photo, height: 150, width: 150, crop: :fill, class: "sample" %>
         <ul>
           <% @cocktail.doses.each do |d| %>
             <li>
@@ -20,6 +21,7 @@
         <%= link_to new_cocktail_dose_path(@cocktail) do %>
           <%= fa_icon 'fas fa-plus-circle' %>
         <% end %>
+        <%= link_to "delete drink", destroy_cocktail_path, method: :delete %>
       </div>
     </div>
   </div>

@@ -1,11 +1,11 @@
 <div class= "banner", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path 'background.jpg' %>);">
 
   <div class="banner-content">
-    <h1>Welcome to Mister Cocktails</h1>
-    <h4>Create Your Unique Cocktail Recipe</h2>
+    <h1>mister_cocktail</h1>
+    <h4>crte_yr_unqie_rcpi</h2>
     <%= link_to new_cocktail_path do  %>
       <div class="button">
-        Start Here
+        start now
       </div>
     <% end %>
   </div>
@@ -14,52 +14,20 @@
 <div class="wrapper">
   <div class="card-container">
     <div class="landing-title">
-      <h2 class="text-center">Find Out Other's Secret Recipes</h2>
+      <h2 class="text-center">crte_by_cmmnity</h2>
     </div>
     <div class="row">
       <% @cocktails.each do |cocktail| %>
       <div class="col col-sx-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div>
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div><div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-          <div class="card-category">Popular</div>
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <a class="card-link" href="#" ></a>
-        </div>
+          <%= link_to cocktail_path(cocktail), class: 'link' do %>
+            <div class="card-home" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+              <%= cl_image_tag cocktail.photo, height: 175, width: 260, crop: :fill %>
+              <div class="card-category">Popular</div>
+              <div class="card-description">
+                <h2><%= cocktail.name %></h2>
+              </div>
+            </div>
+          <% end %>
       </div>
       <% end %>
     </div>
